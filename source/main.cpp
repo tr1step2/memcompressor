@@ -2,9 +2,9 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
-
-#include "Allocator.h"
 #include <memory>
+
+#include "memcomp.hpp"
 
 struct A 
 {
@@ -25,7 +25,7 @@ struct A
 };
 
 template <typename Type>
-void foo(Pointer<Type> ptr)
+void foo(memcomp::Pointer<Type> ptr)
 {
     ptr->printall();
     ptr.get();
@@ -33,7 +33,7 @@ void foo(Pointer<Type> ptr)
 
 int main(int argc, char **argv)
 {
-    Allocator &alloc = *Allocator::getInst();
+    memcomp::Allocator & alloc = memcomp::Allocator::getInst();
 
     {
         auto pa1 = alloc.create<A>(1);
