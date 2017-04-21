@@ -1,1 +1,1 @@
-Custom memory manager with compressing memory for prevent memory fragmentation.
+Custom memory manager with compressing memory to prevent memory fragmentation.
